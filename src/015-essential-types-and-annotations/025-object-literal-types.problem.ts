@@ -1,7 +1,12 @@
 import { Expect, Equal } from "@total-typescript/helpers";
 import { expect, it } from "vitest";
 
-const concatName = (user) => {
+type userObj = {
+  first: string;
+  last: string;
+}
+
+const concatName = (user: userObj) => {
   return `${user.first} ${user.last}`;
 };
 
