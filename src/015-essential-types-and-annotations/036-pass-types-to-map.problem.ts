@@ -1,6 +1,7 @@
 // CODE
+type User = {name: string, age: number}
 
-const userMap = new Map();
+const userMap = new Map<number, User>();
 
 // TESTS
 
