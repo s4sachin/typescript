@@ -2,9 +2,12 @@ import { Equal, Expect } from "@total-typescript/helpers";
 
 type User = {
   id: string;
-};
+};  
 
-type ApiResponse = [string, User[] | string];
+type SuccessResponse = ["success", User[]];
+type ErrorResponse = ["error", string]
+
+type ApiResponse = SuccessResponse | ErrorResponse
 
 async function fetchData(): Promise<ApiResponse> {
   try {
@@ -17,7 +20,7 @@ async function fetchData(): Promise<ApiResponse> {
       ];
     }
 
-    const data = await response.json();
+    const data = (await response.json())
     return ["success", data];
   } catch (error) {
     return ["error", "An error occurred"];
