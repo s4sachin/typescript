@@ -1,18 +1,19 @@
 import { Extends, Expect } from "@total-typescript/helpers";
 
-type User = {
+type BasicDetails = {
   id: string;
   createdAt: Date;
+}
+
+type User =  {
   name: string;
   email: string;
-};
+} & BasicDetails;
 
 type Product = {
-  id: string;
-  createdAt: Date;
   name: string;
   price: number;
-};
+} & BasicDetails;
 
 type tests = [
   Expect<
