@@ -1,4 +1,23 @@
-interface Scores {}
+interface Scores {
+  [extraSubjects: string]: number
+  english: number,
+  math: number,
+  science: number,
+}
+
+/* 
+Alternatively 
+
+interface MainSubjects {
+  math: number,
+  science: number,
+  english: number
+  }
+
+  interface ExtraSubjects extends MainSubjects {
+    [extraSubjects: string]: number
+  }
+*/
 
 // @ts-expect-error science is missing!
 const scores: Scores = {
