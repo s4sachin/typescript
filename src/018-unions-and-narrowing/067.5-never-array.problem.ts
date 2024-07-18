@@ -1,4 +1,8 @@
-const shoppingCart = {
+interface ShoppingCart {
+  items: string[]
+}
+
+const shoppingCart: ShoppingCart = {
   items: [],
 };
 
