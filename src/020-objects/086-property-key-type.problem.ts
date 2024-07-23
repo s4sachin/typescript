@@ -1,6 +1,12 @@
 import { expect, it } from "vitest";
 
-const hasKey = (obj: object, key: string) => {
+// const hasKey = (obj: object, key: string | number | symbol) => {
+//   return obj.hasOwnProperty(key);
+// };
+
+/* So instead of passing a Union of string | number | symbol, TS has PropertyKey type which represents the same */
+
+const hasKey = (obj: object, key: PropertyKey) => {
   return obj.hasOwnProperty(key);
 };
 
