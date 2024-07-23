@@ -8,6 +8,7 @@ type User = {
 type UserWithoutPhoneNumber = Omit<User, "phoneNumber">;
 
 // But you CAN'T pick properties which don't exist
+//@ts-expect-error
 type UserWithOnlyPhoneNumber = Pick<User, "phoneNumber">;
 
 // More information:
