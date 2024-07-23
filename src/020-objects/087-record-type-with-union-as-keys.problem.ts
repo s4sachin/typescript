@@ -1,6 +1,16 @@
 type Environment = "development" | "production" | "staging";
 
-type Configurations = unknown;
+
+/* Using Record Utility Helper */
+
+// type Configurations = Record<Environment, {
+//   apiBaseUrl: string;
+//   timeout: number;
+// }>
+
+/* Another approach */
+
+type Configurations = {[Env in Environment]: {apiBaseUrl: string; timeout: number}}
 
 const configurations: Configurations = {
   development: {
