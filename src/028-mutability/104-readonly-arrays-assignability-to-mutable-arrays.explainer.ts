@@ -22,4 +22,5 @@ printNamesMutable(mutableNames);
 const readonlyNames = ["John", "Jane", "Mike"] as const;
 
 printNamesReadonly(readonlyNames);
+//@ts-expect-error
 printNamesMutable(readonlyNames);
